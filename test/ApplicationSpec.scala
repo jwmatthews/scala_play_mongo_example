@@ -4,6 +4,11 @@ import org.specs2.mutable._
 
 import play.api.test._
 import play.api.test.Helpers._
+import com.novus.salat._
+import com.novus.salat.global._
+import com.mongodb.casbah.Imports._
+
+import models.Registration
 
 /**
  * Add your spec here.
@@ -26,8 +31,15 @@ class ApplicationSpec extends Specification {
         
         status(home) must equalTo(OK)
         contentType(home) must beSome.which(_ == "text/html")
-        contentAsString(home) must contain ("Your new application is ready.")
+        contentAsString(home) must contain ("Super Simple Sample")
       }
+    }
+
+    "convert a Registration case class to a DBObject" in {
+      val registration = Registration("usera", "pw", "pw", "Real Name")
+      val dbo = grater[Registration].asDBObject(registration)
+      dbo must not be None
+
     }
   }
 }
