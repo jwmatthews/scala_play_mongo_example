@@ -2,7 +2,7 @@ scala_play_mongo_example
 ========================
 
 Example of a Scala project using Play &amp; Mongo (Casbah/Salat)
-Based on blog post from: http://yobriefca.se/blog/2012/05/08/starter-for-10-scala/
+<br/>Based on blog post from: http://yobriefca.se/blog/2012/05/08/starter-for-10-scala/
 
 
 ## Versions used:
