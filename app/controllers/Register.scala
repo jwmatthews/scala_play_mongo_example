@@ -1,10 +1,8 @@
 package controllers
 
-//import play.api._
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
-//import play.api.data.validation.Constraints._
 import models._
 
 
@@ -29,9 +27,7 @@ object Register extends Controller {
     registrationForm.bindFromRequest.fold(
       form => BadRequest(views.html.register(form)),
       registration => {
-        println("Registration invoked with request " + request + ", registration = " + registration)
         Registrations.create(registration)
-        println("Registrations.create() completed")
         Redirect(routes.Application.index()).flashing("message" -> "User Registered!")
       }
     )

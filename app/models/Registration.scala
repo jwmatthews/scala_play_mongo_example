@@ -35,10 +35,7 @@ object Registrations {
 
   def all = registrations.map(grater[Registration].asObject(_)).toList
   def create(registration: Registration) {
-    println("models.Registration.create(" + registration + ") invoked")
-    println("grater[Registration].asDBObject("+registration+") = "+ grater[Registration].asDBObject(registration))
     registrations += grater[Registration].asDBObject(registration)
-
   }
 
 }

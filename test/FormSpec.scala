@@ -2,12 +2,6 @@ package test
 
 import org.specs2.mutable._
 
-import play.api.test._
-import play.api.test.Helpers._
-import com.novus.salat._
-import com.novus.salat.global._
-import com.mongodb.casbah.Imports._
-
 class FormSpec extends Specification {
 
   import controllers.Register.registrationForm
@@ -55,9 +49,6 @@ class FormSpec extends Specification {
     form("realName").value must beSome.which(_ == "Fred")
 
     form.value must beSome.which( _ == Registration("usera","pw1","pw1","Fred"))
-    //val regObj: Registration = form.value.get
-    //println(regObj)
-    //val regDBO = grater[Registration].asDBObject(regObj)
   }
 }
 
